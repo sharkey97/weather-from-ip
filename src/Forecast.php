@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cache;
 class Forecast
 {
     protected $weatherService;
+    protected $ipService;
 
     public function __construct(WeatherService $weatherService, IpService $ipService)
     {
