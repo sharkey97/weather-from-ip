@@ -10,14 +10,12 @@ class IpService
     {
 
         $response = Http::get("https://ipapi.co/{$ipAddress}/json/"); // do you need api keys?
-        $backup = Http::get("http://ip-api.com/json/{$ipAddress}"); // do you need api keys?
         
         if ($response->ok()) {
             return $response->json();
-        }elseif ($backup->ok()) {
+        }else{
+            $backup = Http::get("http://ip-api.com/json/{$ipAddress}"); // only load when required
             return $backup->json();
-        }
-        
-        return null;
+        }        
     }
 }
