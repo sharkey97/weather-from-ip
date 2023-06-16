@@ -18,7 +18,7 @@ class Forecast
         $this->ipService = $ipService;
     }
 
-    public function index($ip)
+    public function index($ip,$locationRaw=false)
     {
         // Get the guest IP address from the request
 
@@ -28,6 +28,10 @@ class Forecast
         $weatherData = $this->weatherService->getWeatherForecast($city);
 
         // Return the weather data
+
+        if($locationRaw == true){
+            return $locationData;
+        }
         return $weatherData;
     }
 }
