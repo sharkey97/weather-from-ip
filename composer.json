@@ -1,0 +1,17 @@
+{
+    "name": "sharkey97/weatherfromip",
+    "description": "A package to get weather data based off an inputted IP location",
+    "autoload": {
+        "psr-4": {
+            "Sharkey97\\WeatherFromIp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sharkey97"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.7"
+    }
+}
